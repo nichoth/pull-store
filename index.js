@@ -1,5 +1,6 @@
 var S = require('pull-stream/pull')
 S.through = require('pull-stream/throughs/through')
+S.once = require('pull-stream/sources/once')
 var scan = require('pull-scan')
 var cat = require('pull-cat')
 
