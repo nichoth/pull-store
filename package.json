@@ -1,6 +1,6 @@
 {
   "name": "pull-store",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Persistent state for pull streams",
   "main": "index.js",
   "scripts": {
