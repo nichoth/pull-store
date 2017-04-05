@@ -7,25 +7,27 @@ var store = Store(function (acc, n) {
 }, 0)
 
 test('store', function (t) {
-    t.plan(1)
-    var expected = [0,1,2,3]
+    t.plan(2)
     S(
         S.values([1,2,3]),
         store(),
         S.collect(function (err, res) {
-            t.deepEqual(res, expected, 'should emit initial state')
+            t.error(err)
+            t.deepEqual(res, [0,1,2,3], 'should emit initial state')
         })
     )
 })
 
 test('subscribe again', function (t) {
-    t.plan(1)
-    var expected = [3,4,5]
+    t.plan(2)
+
     S(
         S.values([4,5]),
         store(),
         S.collect(function (err, res) {
-            t.deepEqual(res, expected, 'should keep state after a stream ends')
+            t.error(err)
+            t.deepEqual(res, [3,4,5],
+                'should keep state after a stream ends')
         })
     )
 })
