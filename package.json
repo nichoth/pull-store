@@ -4,7 +4,8 @@
   "description": "Persistent state for pull streams",
   "main": "index.js",
   "scripts": {
-    "preversion": "npm test",
+    "lint": "eslint .",
+    "preversion": "npm run lint && npm test",
     "postversion": "git push && git push --tags && npm publish",
     "test": "node test/index.js | tap-spec"
   },

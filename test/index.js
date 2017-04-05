@@ -31,3 +31,27 @@ test('subscribe again', function (t) {
         })
     )
 })
+
+test('multiple subscribers', function (t) {
+    t.plan(4)
+
+    S(
+        store.state(),
+        S.collect(function (err, res) {
+            t.error(err)
+            t.deepEqual(res, [5,6,7,8], 'we can listen over here too')
+        })
+    )
+
+    S(
+        S.values([6,7,8]),
+        store(),
+        S.collect(function (err, res) {
+            t.error(err)
+            t.deepEqual(res, [5,6,7,8])
+        })
+    )
+
+    store.end()
+})
+
