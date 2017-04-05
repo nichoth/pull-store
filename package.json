@@ -1,7 +1,7 @@
 {
   "name": "pull-store",
   "version": "0.1.0",
-  "description": "Persistent state for pull streams",
+  "description": "State machine as a pull stream",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
