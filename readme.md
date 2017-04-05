@@ -49,7 +49,7 @@ test('multiple subscribers', function (t) {
     }, 5)
 
     S(
-        store.state(),
+        store.state(),  // return a source stream starting with the latest value 
         S.collect(function (err, res) {
             t.error(err)
             t.deepEqual(res, [5,6,7,8], 'we can listen over here too')
